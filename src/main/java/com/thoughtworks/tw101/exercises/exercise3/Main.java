@@ -8,8 +8,15 @@ public class Main {
     public static void main(String[] args) {
         OddSum oddSum = new OddSum();
 
-        Integer sum = oddSum.of(1, 100);
+        Integer sum1to100 = oddSum.of(1, 100);
+        Integer sum5to20 = oddSum.of(5,20);
+        Integer sum4to20 = oddSum.of(4,20);
+        Integer sum3to20 = oddSum.of(3,20);
 
-        System.out.println(sum);
+        System.out.println(sum1to100);
+        System.out.println(sum5to20);
+        System.out.println(sum4to20);
+        System.out.println(sum3to20);
+
     }
 }

@@ -3,12 +3,13 @@ package com.thoughtworks.tw101.exercises.exercise3;
 public class OddSum {
 
     public int of(int start, int end) {
-        int sumAllOddsToEnd = findSumAllOddsToN(end);
-        int sumAllOddsToStart = findSumAllOddsToN(start);
-        return sumAllOddsToEnd - sumAllOddsToStart;
+        int sumAllOddsThroughEnd = findSumAllOddsThroughN(end);
+        int sumAllOddsToStart = findSumAllOddsThroughN(start-1);
+        return sumAllOddsThroughEnd - sumAllOddsToStart;
     }
 
-    private int findSumAllOddsToN(int n) {
+    private int findSumAllOddsThroughN(int n) {
         return (int) Math.pow(((n+1)/2),2);
     }
+
 }

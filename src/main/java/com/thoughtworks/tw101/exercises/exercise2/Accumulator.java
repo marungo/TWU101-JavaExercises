@@ -4,7 +4,7 @@ public class Accumulator {
     private int count;
 
     public Accumulator() {
-        this.count = 0;
+        count = 0;
     }
 
     public void increment() {
