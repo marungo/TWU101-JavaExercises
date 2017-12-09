@@ -20,14 +20,12 @@ public class RandomNumberGameWithGuessList extends RandomNumberGame {
         }
     }
 
-    @Override
     protected void parseGuess(String guess) {
         String validGuess = ensureValidGuess(guess);
         guesses.add(Integer.parseInt(validGuess));
         super.parseGuess(validGuess);
     }
 
-    @Override
     protected String endGame() {
         System.out.println("These were your guesses: " + guesses.toString());
         return super.endGame();

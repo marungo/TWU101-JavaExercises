@@ -17,6 +17,11 @@ public class RandomNumberGame {
         return "Nice! Game over.";
     }
 
+    protected void parseGuess(String guess) {
+        int guessInt = Integer.parseInt(guess);
+        System.out.println(checkNum(guessInt));
+    }
+
     private String checkNum(int n) {
         if (n == randomNum) {
             return endGame();
@@ -24,11 +29,6 @@ public class RandomNumberGame {
             return "Too low";
         else
             return "Too high";
-    }
-
-    protected void parseGuess(String guess) {
-        int guessInt = Integer.parseInt(guess);
-        System.out.println(checkNum(guessInt));
     }
 
     public void play() {
