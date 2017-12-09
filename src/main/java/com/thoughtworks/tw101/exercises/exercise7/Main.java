@@ -7,7 +7,12 @@ package com.thoughtworks.tw101.exercises.exercise7;
 public class Main {
 
     public static void main(String[] args) {
-        RandomNumberGame game = new RandomNumberGame();
-        game.start();
+        RandomNumberGame game1 = new RandomNumberGame();
+        RandomNumberGame game2 = new RandomNumberGame();
+
+        game1.play();
+        game2.play();
+
+
     }
 }

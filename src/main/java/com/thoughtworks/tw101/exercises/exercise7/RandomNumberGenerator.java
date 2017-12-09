@@ -1,4 +1,4 @@
-package com.thoughtworks.tw101.exercises.exercise8;
+package com.thoughtworks.tw101.exercises.exercise7;
 
 public class RandomNumberGenerator {
     private int randomNum;
