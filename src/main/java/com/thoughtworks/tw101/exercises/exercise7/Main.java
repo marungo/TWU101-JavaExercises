@@ -13,6 +13,6 @@ public class Main {
         game1.play();
         game2.play();
 
-
+        game1.closeReader();
     }
 }

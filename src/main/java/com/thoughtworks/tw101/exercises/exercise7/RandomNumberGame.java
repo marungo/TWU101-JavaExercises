@@ -2,7 +2,7 @@ package com.thoughtworks.tw101.exercises.exercise7;
 import java.util.Scanner;
 
 public class RandomNumberGame {
-    private static Scanner reader = new Scanner(System.in);
+    protected static Scanner reader = new Scanner(System.in);
     private int randomNum;
     private boolean gameOver;
 
@@ -12,26 +12,34 @@ public class RandomNumberGame {
         gameOver = false;
     }
 
+    protected String endGame() {
+        gameOver = true;
+        return "Nice! Game over.";
+    }
+
     private String checkNum(int n) {
         if (n == randomNum) {
-            gameOver = true;
-            return "Correct! Game Over";
+            return endGame();
         } else if (n < randomNum)
             return "Too low";
         else
             return "Too high";
     }
 
-    private void playRound(Scanner reader) {
-        System.out.println("Guess an integer between 1 and 100.");
-        int n = Integer.parseInt(reader.next());
-        System.out.println(checkNum(n));
+    protected void parseGuess(String guess) {
+        int guessInt = Integer.parseInt(guess);
+        System.out.println(checkNum(guessInt));
     }
 
     public void play() {
         while (gameOver == false) {
-            playRound(reader);
+            System.out.println("Guess an integer between 1 and 100.");
+            String guess = reader.next();
+            parseGuess(guess);
         }
     }
 
+    public static void closeReader() {
+        reader.close();
+    }
 }

@@ -6,8 +6,12 @@ package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Main {
     public static void main(String[] args) {
-        RandomNumberGame game = new RandomNumberGame();
-        game.play();
+        RandomNumberGameWithGuessList game1 = new RandomNumberGameWithGuessList();
+        RandomNumberGameWithGuessList game2 = new RandomNumberGameWithGuessList();
 
+        game1.play();
+        game2.play();
+
+        game1.closeReader();
     }
 }
