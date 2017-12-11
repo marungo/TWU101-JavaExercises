@@ -7,12 +7,18 @@ package com.thoughtworks.tw101.exercises.exercise7;
 public class Main {
 
     public static void main(String[] args) {
-        RandomNumberGame game1 = new RandomNumberGame();
-        RandomNumberGame game2 = new RandomNumberGame();
+        System.out.println("Let's play a game.");
+        // Lean solution to fulfill all game requirements. One class.
+        OneClassRandomNumberGame game = new OneClassRandomNumberGame();
+        game.play();
+        game.closeReader();
 
-        game1.play();
-        game2.play();
+        System.out.println("Now let's play this game again, with a different implementation.");
+        // More scalable, hefty solution to game instructions. Multiple classes.
+        RandomNumberGame game1 = new RandomNumberGame(new RandomNumberSimpleGuessChecker());
+        game1.playGame();
+        game1.playGame();
+        game1.stopPlayingGames();
 
-        game1.closeReader();
     }
 }

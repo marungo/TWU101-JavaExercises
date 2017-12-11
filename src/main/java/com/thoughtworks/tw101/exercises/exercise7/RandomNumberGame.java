@@ -2,44 +2,38 @@ package com.thoughtworks.tw101.exercises.exercise7;
 import java.util.Scanner;
 
 public class RandomNumberGame {
-    protected static Scanner reader = new Scanner(System.in);
-    private int randomNum;
-    private boolean gameOver;
+    private RandomNumberGuessChecker guessChecker;
+    private Scanner reader;
 
-    public RandomNumberGame() {
-        RandomNumberGenerator gen = new RandomNumberGenerator();
-        randomNum = gen.getRandomNum();
-        gameOver = false;
+    public RandomNumberGame(RandomNumberGuessChecker guessChecker) {
+        reader = new Scanner(System.in);
+        this.guessChecker = guessChecker;
+
+        System.out.println("What's your name?");
+        String name = reader.next();
+        System.out.println("OK. Welcome " + name);
     }
 
-    protected String endGame() {
-        gameOver = true;
-        return "Nice! Game over.";
+    protected void endGame() {
+        System.out.println("You guessed my number! You win.");
     }
 
-    protected void parseGuess(String guess) {
-        int guessInt = Integer.parseInt(guess);
-        System.out.println(checkNum(guessInt));
+    protected String playRound() {
+        System.out.println("Guess an integer between 1 and 100.");
+        String guess = reader.next();
+        guessChecker.checkGuess(guess);
+        return guess;
     }
 
-    private String checkNum(int n) {
-        if (n == randomNum) {
-            return endGame();
-        } else if (n < randomNum)
-            return "Too low";
-        else
-            return "Too high";
-    }
-
-    public void play() {
-        while (gameOver == false) {
-            System.out.println("Guess an integer between 1 and 100.");
-            String guess = reader.next();
-            parseGuess(guess);
+    public void playGame() {
+        guessChecker.resetChecker();
+        while (!guessChecker.isGameOver()) {
+            playRound();
         }
+        endGame();
     }
 
-    public static void closeReader() {
+    public void stopPlayingGames() {
         reader.close();
     }
 }
