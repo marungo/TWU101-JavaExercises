@@ -1,34 +1,26 @@
 package com.thoughtworks.tw101.exercises.exercise8;
 import com.thoughtworks.tw101.exercises.exercise7.RandomNumberGame;
+import com.thoughtworks.tw101.exercises.exercise7.RandomNumberGuessChecker;
+
 import java.util.ArrayList;
 
 public class RandomNumberGameWithGuessList extends RandomNumberGame {
-    private ArrayList<Integer> guesses;
+    private ArrayList<String> guesses;
 
-    public RandomNumberGameWithGuessList() {
+    RandomNumberGameWithGuessList(RandomNumberGuessChecker guessChecker) {
+        super(guessChecker);
         guesses = new ArrayList<>();
     }
 
-    private String ensureValidGuess(String guess) {
-        try {
-            int n = Integer.parseInt(guess);
-            return guess;
-        } catch (NumberFormatException e) {
-
-            System.out.println("Not valid. Guess must be an integer. Make another guess:");
-            return ensureValidGuess(reader.next());
-        }
+    @Override
+    protected void endGame() {
+        super.endGame();
+        System.out.println("These were your guesses from the game: " + guesses);
     }
 
-    protected void parseGuess(String guess) {
-        String validGuess = ensureValidGuess(guess);
-        guesses.add(Integer.parseInt(validGuess));
-        super.parseGuess(validGuess);
+    protected String playRound() {
+        String guess = super.playRound();
+        guesses.add(guess);
+        return guess;
     }
-
-    protected String endGame() {
-        System.out.println("These were your guesses: " + guesses.toString());
-        return super.endGame();
-    }
-
 }

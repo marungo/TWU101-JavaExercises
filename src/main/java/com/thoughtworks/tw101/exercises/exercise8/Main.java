@@ -4,16 +4,15 @@ package com.thoughtworks.tw101.exercises.exercise8;
 // once they guess correctly. Use an ArrayList to store the guesses. Catch the NumberFormatException and handle the case
 // where the user entered a String that is not parseable.
 
-import com.thoughtworks.tw101.exercises.exercise7.RandomNumberGame;
-
 public class Main {
     public static void main(String[] args) {
-        RandomNumberGame game1 = new RandomNumberGameWithGuessList();
-        RandomNumberGameWithGuessList game2 = new RandomNumberGameWithGuessList();
+        System.out.println("Let's play a new and improved version of this game.");
+        RandomNumberGameWithGuessList game =
+                new RandomNumberGameWithGuessList(new RandomNumberGuessCheckerWithIntegerValidation());
 
-        game1.play();
-        game2.play();
+        game.playGame();
+        game.playGame();
 
-        game1.closeReader();
+        game.stopPlayingGames();
     }
 }
