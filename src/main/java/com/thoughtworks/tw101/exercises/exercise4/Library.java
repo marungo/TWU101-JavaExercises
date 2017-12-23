@@ -1,6 +1,7 @@
 package com.thoughtworks.tw101.exercises.exercise4;
 
 import java.io.PrintStream;
+import java.util.Arrays;
 
 public class Library {
     private String[] books;
@@ -12,11 +13,9 @@ public class Library {
     }
 
     public void printBooksContaining(String partialBookTitle) {
-        for (int i=0; i<books.length; i++) {
-            if (books[i].contains(partialBookTitle)) {
-                printStream.println(books[i]);
-            }
-        }
+        Arrays.stream(books)
+                .filter(book -> book.contains(partialBookTitle))
+                .forEach(book -> printStream.println(book));
         printStream.println();
     }
 }

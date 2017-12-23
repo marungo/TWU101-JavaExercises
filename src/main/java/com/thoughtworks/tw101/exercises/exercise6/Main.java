@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Monster> monsters = new ArrayList<>();
+
         for (int i=0;i<5;i++) {
             monsters.add(new Troll());
             monsters.add(new Orc());
         }
+
         for (Monster monster : monsters) monster.takeDamage(10);
         for (Monster monster : monsters) monster.reportStatus();
     }

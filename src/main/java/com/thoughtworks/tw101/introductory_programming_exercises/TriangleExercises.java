@@ -1,5 +1,8 @@
 package com.thoughtworks.tw101.introductory_programming_exercises;
 
+
+import java.util.Collections;
+
 public class TriangleExercises {
     public static void main(String[] args) {
         drawAnAsterisk();
@@ -19,10 +22,8 @@ public class TriangleExercises {
 //    Given a number n, print n asterisks on one line.
 //    Example when n=8:  ********
     private static void drawAHorizontalLine(int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.print("*");
-        }
-        System.out.println();
+        String s = String.join("", Collections.nCopies(n, "*"));
+        System.out.println(s);
     }
 
 //    Draw a vertical line
