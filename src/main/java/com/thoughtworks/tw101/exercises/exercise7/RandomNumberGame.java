@@ -1,6 +1,12 @@
 package com.thoughtworks.tw101.exercises.exercise7;
 import java.util.Scanner;
 
+/*
+The instructions imply that this exercise should be
+built using multiple classes, so I refactored
+from this original solution which is a single class.
+*/
+
 public class RandomNumberGame {
     private RandomNumberGuessChecker guessChecker;
     private Scanner reader;
@@ -8,10 +14,6 @@ public class RandomNumberGame {
     public RandomNumberGame(RandomNumberGuessChecker guessChecker) {
         reader = new Scanner(System.in);
         this.guessChecker = guessChecker;
-
-        System.out.println("What's your name?");
-        String name = reader.next();
-        System.out.println("OK. Welcome " + name);
     }
 
     protected void endGame() {

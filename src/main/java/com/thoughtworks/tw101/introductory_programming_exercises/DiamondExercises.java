@@ -35,9 +35,8 @@ public class DiamondExercises {
     private static void drawNameOrMiddleLine(boolean name, int n) {
         if (name)
             System.out.println("MR Ngo");
-        else {
+        else
             drawLevel(0,n*2-1);
-        }
     }
 
     private static void drawIsoscelesOrDiamond(int n, boolean diamond, boolean putName) {

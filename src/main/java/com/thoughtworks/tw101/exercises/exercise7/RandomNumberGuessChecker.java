@@ -9,11 +9,11 @@ public abstract class RandomNumberGuessChecker {
         gameOver = false;
     }
 
-    public boolean isGameOver() {
+    protected boolean isGameOver() {
         return gameOver;
     }
 
-    public void resetChecker() {
+    protected void resetChecker() {
         randomNum = generateRandomNum();
         gameOver = false;
     }
@@ -33,9 +33,9 @@ public abstract class RandomNumberGuessChecker {
     public abstract boolean isValidGuess(String guess);
 
     public void checkGuess(String guess) {
-        if (!isValidGuess(guess)) {
+        if (!isValidGuess(guess))
             System.out.println("Not a valid guess");
-        } else {
+        else {
             int guessInt = Integer.parseInt(guess);
             compareGuess(guessInt);
         }
