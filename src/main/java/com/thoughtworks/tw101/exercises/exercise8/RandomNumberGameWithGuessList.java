@@ -1,7 +1,7 @@
 package com.thoughtworks.tw101.exercises.exercise8;
+
 import com.thoughtworks.tw101.exercises.exercise7.RandomNumberGame;
 import com.thoughtworks.tw101.exercises.exercise7.RandomNumberGuessChecker;
-
 import java.util.ArrayList;
 
 public class RandomNumberGameWithGuessList extends RandomNumberGame {

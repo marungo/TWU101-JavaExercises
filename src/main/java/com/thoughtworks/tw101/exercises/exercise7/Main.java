@@ -8,17 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Let's play a game.");
-        // Lean solution to fulfill all game requirements. One class.
-        OneClassRandomNumberGame game = new OneClassRandomNumberGame();
-        game.play();
-        game.closeReader();
-
-        System.out.println("Now let's play this game again, with a different implementation.");
-        // More scalable, hefty solution to game instructions. Multiple classes.
         RandomNumberGame game1 = new RandomNumberGame(new RandomNumberSimpleGuessChecker());
         game1.playGame();
+        System.out.println("Let's play again.");
         game1.playGame();
         game1.stopPlayingGames();
-
     }
 }
