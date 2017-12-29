@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 /*
 The instructions imply that this exercise should be
-built using multiple classes, so I refactored
-from this original solution which is a single class.
+built using multiple classes.
 */
 
 public class RandomNumberGame {

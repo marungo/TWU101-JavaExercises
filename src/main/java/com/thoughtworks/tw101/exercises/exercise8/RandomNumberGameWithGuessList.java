@@ -16,6 +16,7 @@ public class RandomNumberGameWithGuessList extends RandomNumberGame {
     protected void endGame() {
         super.endGame();
         System.out.println("These were your guesses from the game: " + guesses);
+        guesses = new ArrayList<>();
     }
 
     protected String playRound() {
